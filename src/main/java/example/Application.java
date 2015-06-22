@@ -16,17 +16,13 @@ public class Application {
 	
 	@EventListener
 	public void curl(ApplicationReadyEvent ready) throws IOException, InterruptedException {
-		
-		// This should return a 400 but returns a 200
+		// Results in 500
 		Process p = new ProcessBuilder().inheritIO().command(
 				"/usr/bin/curl",
 				"-v" ,
 				"-s",
-				"-XPOST",
-	            "-H", "Content-Type: application/json",
-	            "http://localhost:8080/entities",
-	            "-d", "{}").start();
+	            "http://localhost:8080/alps/entities").start();
 		p.waitFor();
 	}
-	
+
 }
