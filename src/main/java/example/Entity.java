@@ -1,4 +1,4 @@
-package example.model;
+package example;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.annotation.Id;
